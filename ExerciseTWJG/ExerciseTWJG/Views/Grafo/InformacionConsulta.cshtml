@@ -1,0 +1,108 @@
+﻿@model ExerciseTWJG.Models.clsGrafo
+
+
+<style type="text/css">
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-color: #999;
+    }
+
+        .tg td {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 1px;
+            overflow: hidden;
+            word-break: normal;
+            border-color: #999;
+            color: #444;
+            background-color: #F7FDFA;
+        }
+
+        .tg th {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 1px;
+            overflow: hidden;
+            word-break: normal;
+            border-color: #999;
+            color: #fff;
+            background-color: #26ADE4;
+        }
+
+        .tg .tg-s6z2 {
+            text-align: center;
+        }
+
+        .tg .tg-baqh {
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .tg .tg-6e7l {
+            font-size: 26px;
+            font-family: "Times New Roman", Times, serif !important;
+            ;
+            text-align: center;
+        }
+
+        .tg .tg-1w1b {
+            font-size: 28px;
+            font-family: "Times New Roman", Times, serif !important;
+            ;
+            text-align: center;
+        }
+
+        .tg .tg-db0a {
+            text-decoration: underline;
+        }
+
+        .tg .tg-yw4l {
+            vertical-align: top;
+        }
+</style>
+@{
+    ViewBag.Title = "InformacionConsulta";
+}
+
+<h2>    Route information</h2>
+@{
+            int i = 1;
+}
+
+@if (!string.IsNullOrEmpty(Model.MensajeError))
+{
+
+    <div class="alert alert-danger" role="alert">@Model.MensajeError</div>       
+
+    }
+    else
+    {
+
+
+        <table class="tg">
+            <tr>
+                <th class="tg-6e7l">Item</th>
+                <th class="tg-1w1b">Pregunta </th>
+                <th class="tg-1w1b">Salida</th>
+            </tr>
+            @foreach (var item in Model.lstQuerys)
+            {
+            <tr>
+                <td class="tg-s6z2">@i</td>
+                <td class="tg-db0a">@item.question</td>
+                <td class="tg-s6z2">@item.answer</td>
+            </tr>
+
+            i++;
+            }
+
+
+
+        </table>
+    }

@@ -11,7 +11,6 @@ namespace ExerciseTWJG.Models
 
         public char Vertex2 { get; set; }
 
-
         public float Cost { get; set; }
     }
 }
